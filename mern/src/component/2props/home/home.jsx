@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TestProps from "../2props";
+import TestProps from "../props";
 
 class home extends Component {
   render() {
