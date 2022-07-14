@@ -5,13 +5,17 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 // import HalloStateFull from './component/1stateFull/stateFull';
 // import HalloStateLess from './component/1stateLess/sateLess';
-import Home from './component/2props/home/home';
+// import Home from './component/2props/home/home';
+// import Header from './component/updateComp/stateLess/header/header';
+// import Header from './component/updateComp/stateFull/header/header';
+import Update from './component/updateComp/stateFull/card/Update';
+// import Update from './component/updateComp/Update';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 root.render(
   <React.StrictMode>
-    <Home />
+    <Update />
     {/* <HalloStateFull /> */}
     {/* <HalloStateLess /> */}
     {/* <App /> */}
