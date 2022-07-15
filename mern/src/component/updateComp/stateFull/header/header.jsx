@@ -1,26 +1,21 @@
-// import "./style.css";
-// import React, { Component } from "react";
-// // import Update from "../card/Update";
+import "./style.css";
+import React from "react";
+import Update from "../card/Update";
+import { useState } from "react";
 
-// class Header extends Component {
-//   state = {
-//     count: 0,
-//   };
+function Header() {
+  const [getIsi,setIsi] = useState(0)
+  function update (data) {
+    setIsi(data + 1)
+  };
+  return (
+    <div className="container">
+      <div className="header">keranjang {getIsi}</div>
+      <Update
+        getData={(value) => {update(value)}}
+      />
+    </div>
+  );
+}
 
-//   update = (data) => {
-//     this.setState ({
-//       count: data
-//     });
-//   };
-
-//   render(){
-//     return (
-//       <div className="container">
-//           <div className="header">keranjang {this.state.count}</div>
-//           <Update getData= {(value) => {this.update(value)}}/>
-//       </div>
-//     );
-//   }
-// };
-
-// export default Header;
+export default Header;
