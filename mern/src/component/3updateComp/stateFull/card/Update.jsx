@@ -12,13 +12,13 @@ function Update(props) {
 
   const tambah = () => {
     setIsi(getIsi + 1);
-    dataUpdate(getIsi)
+    dataUpdate(getIsi + 1)
   };
   
   const kurang = () => {
     if (getIsi > 0) {
       setIsi(getIsi - 1);
-      dataUpdate(getIsi)
+      dataUpdate(getIsi - 1)
     }
   };
 
@@ -32,7 +32,7 @@ function Update(props) {
         <button
           type="button"
           className="btn btn-primary d-inline"
-          onDrag={kurang}
+          onClick={kurang}
         >
           -
         </button>

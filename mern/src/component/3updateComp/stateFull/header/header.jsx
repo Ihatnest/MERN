@@ -6,7 +6,7 @@ import { useState } from "react";
 function Header() {
   const [getIsi,setIsi] = useState(0)
   function update (data) {
-    setIsi(data + 1)
+    setIsi(data)
   };
   return (
     <div className="container">
