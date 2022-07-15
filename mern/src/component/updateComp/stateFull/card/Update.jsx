@@ -4,17 +4,18 @@ import logo from "../../../../logo.svg";
 import { useState } from "react";
 // jadi ini adalah cara update data di parent menggunakan state les
 function Update() {
-  let [getIsi, setIsi] = useState();
-  
+  let [getIsi, setIsi] = useState(0);
   const tambah = () => {
-    setIsi(1)
+    setIsi(getIsi + 1)
   };
-
+  
   const kurang = () => {
     if (getIsi > 0) {
-      setIsi(0);
+      setIsi(getIsi - 1);
     }
   };
+
+  console.log(getIsi)
   return (
     <div className="card">
       <span className="count">{getIsi}</span>
@@ -29,7 +30,7 @@ function Update() {
         >
           -
         </button>
-        <span className=" input" placeholder="Search..." onChange={getIsi}>
+        <span className=" input" placeholder="Search..." >
           {getIsi}
         </span>
         <button
