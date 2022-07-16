@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import ApiGET from './component/5apiGET/apiGET';
+class App extends Component {
+  state = {
+    data: []
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  componentDidMount(){
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        data: json
+      })
+    })
+  }
+
+  render(){
+    return (
+      <div className="App">
+        {
+          this.state.data.map( data => {
+            return <ApiGET key={data.id} title={data.title} desc={data.body} />
+          })
+        }
+      </div>
+    );
+  }
 }
 
 export default App;
