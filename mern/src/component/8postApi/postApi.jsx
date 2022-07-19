@@ -2,15 +2,17 @@ import React from "react";
 import { useState } from "react";
 
 function PostData(props) {
-  let [getTitle, setTitle] = useState( );
+  let [getTitle, setTitle] = useState();
   let [getTextArea, setTextAre] = useState();
 
   const hendelInputTitle = (event) => {
     setTitle(event.target.value);
   };
+
   const hendelInputTextArea = (event) => {
     setTextAre(event.target.value);
   };
+
   const data = {
     title: getTitle,
     textArea: getTextArea
@@ -19,7 +21,7 @@ function PostData(props) {
     <div className="form">
       <div className="mb-3">
         <label htmlFor="exampleFormControlInput1" className="form-label">
-          Title {getTitle}
+          Title
         </label>
         <input
           type="email"
@@ -31,7 +33,7 @@ function PostData(props) {
       </div>
       <div className="mb-3">
         <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          Example textarea {getTextArea}
+          Example textarea
         </label>
         <textarea
           className="form-control"

@@ -14,19 +14,19 @@ class App extends Component {
           data: data.data
         })
       })
-  }
-  hendlePost(data){
-    axios.post('http://localhost:3004/posts',data).then((req)=>{
+    }
+    
+    hendlePost = (data) => {
+    axios.post('http://localhost:3004/posts',data).then((req) => {
       this.connectApi()
     })
   }
-
-  handleDelete = (data)=>{
-    axios.delete(`http://localhost:3004/posts/${data}`).then((req)=>{
+  
+  handleDelete = (data) => {
+    axios.delete(`http://localhost:3004/posts/${data}`).then((req) => {
       this.connectApi()
     })
   }
-
 
   componentDidMount() {
     this.connectApi()
@@ -36,10 +36,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PostData post={this.hendlePost}/>
+        <PostData post={this.hendlePost} />
         {
           this.state.data.map(data => {
-            return <ApiGET key={data.id} data={data} delete={this.handleDelete}/>
+            return <ApiGET key={data.id} data={data} delete={this.handleDelete} />
           })
         }
       </div>

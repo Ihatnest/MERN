@@ -6,7 +6,7 @@ function apiGET (props){
         <img src="http://placeimg.com/300/200/tech" className="card-img-top" alt=""/>
         <div className="card-body">
           <h5 className="card-title">{props.data.title}</h5>
-          <p className="card-text">{props.data.body}</p>
+          <p className="card-text">{props.data.textArea}</p>
           <button href="q" className="btn btn-primary" onClick={()=> props.delete(props.data.id)}>delete</button>
         </div>
       </div>
