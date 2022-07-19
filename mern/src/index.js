@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './component/8postApi/App';
+import App from './component/9putApi/App';
 import reportWebVitals from './reportWebVitals';
+// import App from './component/8postApi/App';
 // import App from './component/7deleteApi/App';
 // import App from './component/6fakeApi/App';
 // import HalloStateFull from './component/1stateFull/stateFull';

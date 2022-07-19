@@ -8,7 +8,7 @@ class App extends Component {
   }
 
   connectApi() {
-    axios.get('http://localhost:3004/posts')
+    axios.get('http://localhost:3004/posts?_sort=id&_order=desc')
       .then((data) => {
         this.setState({
           data: data.data
@@ -39,7 +39,7 @@ class App extends Component {
         <PostData post={this.hendlePost} />
         {
           this.state.data.map(data => {
-            return <ApiGET key={data.id} data={data} delete={this.handleDelete} />
+            return <ApiGET key={data.id} data={data} delete={this.handleDelete}/>
           })
         }
       </div>

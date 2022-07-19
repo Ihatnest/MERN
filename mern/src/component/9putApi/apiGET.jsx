@@ -12,7 +12,7 @@ function apiGET (props){
         <div className="card-body">
           <h5 className="card-title">{data.title}</h5>
           <p className="card-text">{data.textArea}</p>
-          <button className="btn btn-primary" onClick={()=> props.data(data)}>Update</button>
+          <button className="btn btn-primary" onClick={()=> props.update(data)}>Update</button>
           <button className="btn btn-danger ms-1" onClick={()=> props.delete(data.id)}>delete</button>
           
         </div>
