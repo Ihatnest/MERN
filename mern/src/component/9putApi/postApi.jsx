@@ -14,7 +14,8 @@ function PostData(props) {
 
   const data = {
     title: getTitle,
-    textArea: getTextArea
+    body: getTextArea,
+    // ido: new Date().getTime()
   }
   return (
     <div className="form">
@@ -39,12 +40,14 @@ function PostData(props) {
           id="exampleFormControlTextarea1"
           rows="3"
           onChange={hendelInputTextArea}
-          defaultValue={props.textArea}
+          defaultValue={props.body}
         ></textarea>
       </div>
       <button type="submit" className="btn btn-success" onClick={()=> props.post(data)}>
         {props.button}
       </button>
+      <button type="hidden" className="btn btn-danger ms-1" onClick={()=> props.cancel(data.status=false)}>Cancel</button>
+
     </div>
   );
 }
