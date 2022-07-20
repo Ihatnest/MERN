@@ -1,9 +1,11 @@
 import React from "react";
 import "./style.css";
 function apiGET (props){
+  
   let data = {
     title: props.data.title,
     textArea: props.data.textArea,
+    ido: new Date().getTime(),
     id: props.data.id
   }
     return(

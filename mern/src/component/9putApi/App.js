@@ -18,6 +18,7 @@ class App extends Component {
   }
 
   hendlePost = (data) => {
+    console.log(data)
     axios.post('http://localhost:3004/posts',data).then((req) => {
       this.connectApi()
     })
@@ -41,10 +42,10 @@ class App extends Component {
   }
 
   hendlePut = (data) => {
-    let isi = this.state.dataUpdate
-    console.log(this.state.dataUpdate.title)
-    axios.put(`http://localhost:3004/posts/${isi}`).then((req) => {
+    console.log(data.ido)
+    axios.put(`http://localhost:3004/posts/${data.ido}`).then((req) => {
       this.connectApi()
+      console.log(data)
     })
   }
 

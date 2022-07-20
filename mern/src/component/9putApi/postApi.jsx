@@ -20,7 +20,7 @@ function PostData(props) {
     <div className="form">
       <div className="mb-3">
         <label htmlFor="exampleFormControlInput1" className="form-label">
-          Title {props.data}
+          Title
         </label>
         <input
           className="form-control"
