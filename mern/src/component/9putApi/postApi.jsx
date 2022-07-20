@@ -8,26 +8,9 @@ function PostData(props) {
     setTitle(event.target.value);
   };
 
-  const test = () => {
-    if (props.title){
-      return props.title
-    }else{
-      const hendelInputTitle = (event) => {
-        setTitle(event.target.value);
-      };
-      return hendelInputTitle
-    }
-  }
-
   const hendelInputTextArea = (event) => {
-    setTextAre(event.target.value);
+    setTextAre(event.target.value)
   };
-
-  if (!props.data){
-    console.log('s')
-  }else {
-    console.log(() => props.data(data))
-  }
 
   const data = {
     title: getTitle,
@@ -37,15 +20,14 @@ function PostData(props) {
     <div className="form">
       <div className="mb-3">
         <label htmlFor="exampleFormControlInput1" className="form-label">
-          Title {test()}
+          Title {props.data}
         </label>
         <input
-          type="email"
           className="form-control"
           id="exampleFormControlInput1"
           placeholder="Title"
           onChange={hendelInputTitle}
-          value={test()}
+          value={props.title}
         />
       </div>
       <div className="mb-3">
@@ -57,6 +39,7 @@ function PostData(props) {
           id="exampleFormControlTextarea1"
           rows="3"
           onChange={hendelInputTextArea}
+          value={props.textArea}
         ></textarea>
       </div>
       <button type="submit" className="btn btn-success" onClick={()=> props.post(data)}>

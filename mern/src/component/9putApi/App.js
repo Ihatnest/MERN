@@ -1,11 +1,14 @@
-import React,{ Component, Fragment } from 'react';
+import React,{ Component,Fragment } from 'react';
 import ApiGET from './apiGET';
 import PostData from './postApi';
 import axios from 'axios'
 class App extends Component {
   state = {
     data: [],
-    dataUpdate: []
+    dataUpdate: {
+      title: undefined,
+      textArea: undefined
+    }
   }
 
   connectApi() {
@@ -24,16 +27,18 @@ class App extends Component {
   }
 
   hendleUpdate = (data) => {
-    if (data === undefined){
+    if (data !== undefined) {
       this.setState({
-        dataUpdate: data
+        dataUpdate: {
+          title: data.title,
+          textArea: data.textArea
+        }
       })
-    }else {
+    } else {
       this.setState({
         dataUpdate: undefined
       })
     }
-    console.log(data)
   }
 
   hendleDelete = (data) => {
@@ -48,10 +53,10 @@ class App extends Component {
 
   render() {
     let post
-    if (this.state.dataUpdate !== undefined) {
+    if (this.state.dataUpdate === undefined) {
       post = <PostData post={this.hendlePost} />
     } else {
-      post = <PostData post={this.hendleUpdate} title={'data'}/>
+      post = <PostData post={this.hendlePost} title={this.state.dataUpdate.title} textArea={this.state.dataUpdate.textArea} />
     }
     return (
       <Fragment>
