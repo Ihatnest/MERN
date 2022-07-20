@@ -5,10 +5,7 @@ import axios from 'axios'
 class App extends Component {
   state = {
     data: [],
-    dataUpdate: {
-      title: undefined,
-      textArea: undefined
-    }
+    dataUpdate: undefined
   }
 
   connectApi() {
@@ -31,14 +28,24 @@ class App extends Component {
       this.setState({
         dataUpdate: {
           title: data.title,
-          textArea: data.textArea
+          textArea: data.textArea,
+          id: data.id
         }
       })
+      console.log(data.id)
     } else {
       this.setState({
         dataUpdate: undefined
       })
     }
+  }
+
+  hendlePut = (data) => {
+    let isi = this.state.dataUpdate
+    console.log(this.state.dataUpdate.title)
+    axios.put(`http://localhost:3004/posts/${isi}`).then((req) => {
+      this.connectApi()
+    })
   }
 
   hendleDelete = (data) => {
@@ -54,9 +61,9 @@ class App extends Component {
   render() {
     let post
     if (this.state.dataUpdate === undefined) {
-      post = <PostData post={this.hendlePost} />
+      post = <PostData post={this.hendlePost} button={'Save'}/>
     } else {
-      post = <PostData post={this.hendlePost} title={this.state.dataUpdate.title} textArea={this.state.dataUpdate.textArea} />
+      post = <PostData post={this.hendlePut} title={this.state.dataUpdate.title} textArea={this.state.dataUpdate.textArea} button={'Update'}/>
     }
     return (
       <Fragment>

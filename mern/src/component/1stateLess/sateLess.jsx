@@ -1,9 +1,13 @@
 import React from "react";
 
-class Hallo extends React.Component{
-    render(){
-        return <h1>hai nama saya ihat</h1>
-    }
+class Hallo extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>hai nama saya ihat</h1>
+      </div>
+    );
+  }
 }
 
 export default Hallo;

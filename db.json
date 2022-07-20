@@ -1,5 +1,11 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "title": "zxzx",
+      "textArea": "zxz",
+      "id": 2
+    }
+  ],
   "comments": [],
   "profile": {
     "name": "typicode"

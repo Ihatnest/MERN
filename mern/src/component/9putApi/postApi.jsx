@@ -27,7 +27,7 @@ function PostData(props) {
           id="exampleFormControlInput1"
           placeholder="Title"
           onChange={hendelInputTitle}
-          value={props.title}
+          defaultValue={props.title}
         />
       </div>
       <div className="mb-3">
@@ -39,11 +39,11 @@ function PostData(props) {
           id="exampleFormControlTextarea1"
           rows="3"
           onChange={hendelInputTextArea}
-          value={props.textArea}
+          defaultValue={props.textArea}
         ></textarea>
       </div>
       <button type="submit" className="btn btn-success" onClick={()=> props.post(data)}>
-        Success 
+        {props.button}
       </button>
     </div>
   );
