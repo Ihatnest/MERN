@@ -22,6 +22,11 @@ class App extends Component {
   hendlePost = (data) => {
     axios.post('http://localhost:3004/posts',data).then((req) => {
       this.connectApi()
+      this.setState({
+        dataUpdate: {
+          status: false
+        }
+      })
     })
   }
 
@@ -38,9 +43,6 @@ class App extends Component {
     } else {
       this.setState({
         dataUpdate: {
-          title: '',
-          body: '',
-          id: 1,
           status: false
         }
       })
@@ -59,19 +61,18 @@ class App extends Component {
       this.connectApi()
       this.setState({
         dataUpdate: {
-          title: '',
-          body: '',
-          id: 1,
           status: false
         }
       })
+      this.componentDidMount()
+      window.location.reload()
     })
   }
 
   hendleCancel = (data) => {
     this.setState({
       dataUpdate: {
-        status: data
+        status: false
       }
     })
   }
